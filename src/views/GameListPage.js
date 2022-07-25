@@ -3,14 +3,19 @@ import '../css/gameListPage.css'
 
 import firebaseApp from '../services/firebase'
 
-import Carousel from '../component/carousel/Carousel'
+import Carousel from '../components/carousel/Carousel'
+import GameCard from '../components/game-card/GameCard'
 
 const db = firebaseApp.firestore();
 
 function GameListPage() {
 
     const [data, setData] = useState(null);
+
     const [carouselData, setCarouselData] = useState(null);
+    const [recommendationData, setRecommendationData] = useState(null);
+    const [strategyData, setStrategyData] = useState(null);
+    const [shooterData, setShooterData] = useState(null);
 
 
     useEffect(() => {
@@ -54,14 +59,39 @@ function GameListPage() {
     }
 
     function getCarouselData(data) {
+
         const carouselArr = [];
         for (let i = 0; i < data.length; i++) {
             if (data[i].carousel) {
                 carouselArr.push(data[i]);
             }
         }
-
         setCarouselData(carouselArr);
+
+        const recommendationArr = [];
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].id === "OW024DEfpwplQXf2zyIG") {
+                recommendationArr.push(data[i]);
+            }
+        }
+        setRecommendationData(recommendationArr);
+
+        const strategyArr = [];
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].genre === "Strategy") {
+                strategyArr.push(data[i]);
+            }
+        }
+        setStrategyData(strategyArr);
+
+        const shooterArr = [];
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].genre === "Shooter") {
+                shooterArr.push(data[i]);
+            }
+        }
+        setShooterData(shooterArr);
+
     }
 
     useEffect(() => {
@@ -73,7 +103,7 @@ function GameListPage() {
     if (!data) {
         return (
             <section className="game-list-page">
-                <h1 style={{textAlign: 'center'}}>Loading ...</h1>
+                <h1 style={{textAlign: 'center', color: 'white'}}>Loading ...</h1>
             </section>
         )
     }
@@ -84,9 +114,49 @@ function GameListPage() {
                 <>
                     <div className='game-list-page-main'>
                         {carouselData && <Carousel data = {carouselData} />}
+                        <div className='section-holder'>
+                            <div className='section-header'>
+                                <h1>Recommendation</h1>
+                            </div>
+                            <ul className='game-card-holder'>
+                                {recommendationData && recommendationData.map((e, i) => {
+                                    return <GameCard data={e} key={i} />
+                                })}
+                            </ul>
+                        </div>
+                        <div className='section-holder'>
+                            <div className='section-header'>
+                                <h1>Strategy Games</h1>
+                            </div>
+                            <ul className='game-card-holder'>
+                                {strategyData && strategyData.map((e, i) => {
+                                    return <GameCard data={e} key={i} />
+                                })}
+                            </ul>
+                        </div>
+                        <div className='section-holder'>
+                            <div className='section-header'>
+                                <h1>Shooter Games</h1>
+                            </div>
+                            <ul className='game-card-holder'>
+                                {shooterData && shooterData.map((e, i) => {
+                                    return <GameCard data={e} key={i} />
+                                })}
+                            </ul>
+                        </div>
+
+                        <div className='section-holder'>
+                            <div className='section-header'>
+                                <h1>Other Games</h1>
+                            </div><ul className='game-card-holder-all'>
+                                {data.map((e, i) => {
+                                    return <GameCard data={e} key={i} />
+                                })}
+                            </ul>
+                        </div>
                     </div>
                 </> : <>
-                    <h1 style={{textAlign: 'center'}}>Try Again ...</h1>
+                    <h1 style={{textAlign: 'center', color: 'white'}}>Try Again ...</h1>
                 </>
             }
         </section>
