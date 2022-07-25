@@ -4,14 +4,14 @@ import firebase from "firebase/compat/app";
 import 'firebase/compat/firestore';
 
 const firebaseConfig = {
-    apiKey: process.env.API_KEY,
-    authDomain: process.env.AUTH_DOMAIN,
-    databaseURL: process.env.DATABASE_URL,
-    projectId: process.env.PROJECT_ID,
-    storageBucket: process.env.STORAGE_BUCKET,
-    messagingSenderId: process.env.MESSAGING_SENDER_ID,
-    appId: process.env.APP_ID,
-    measurementId: process.env.MEASUREMENT_ID
+  apiKey: "AIzaSyAqRoF_peP4UDiI5NUShSh1K5EdNsNPBgA",
+  authDomain: "binarchal9-b5d9f.firebaseapp.com",
+  databaseURL: "https://binarchal9-b5d9f-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "binarchal9-b5d9f",
+  storageBucket: "binarchal9-b5d9f.appspot.com",
+  messagingSenderId: "945906490653",
+  appId: "1:945906490653:web:bada437c89b4e792e6d5f4",
+  measurementId: "G-XEFWZVDEK2"
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
