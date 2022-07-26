@@ -20,6 +20,10 @@ function GameDetailsPage() {
         getData();
     }, []);
 
+    useEffect(() => {
+
+    }, [])
+
     function getData() {
 
         db.collection('game_list').doc(userId).get().then(querySnapShot => {
@@ -31,6 +35,7 @@ function GameDetailsPage() {
             if (!querySnapShot) {
                 throw Error('failed to get data');
             }
+            console.log(querySnapShot.data());
 
             const theData = {
                 id: querySnapShot.id,
