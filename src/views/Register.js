@@ -1,0 +1,80 @@
+import React, {useEffect} from "react";
+import firebase from "../services/firebase";
+import  "../css/Register.css";
+import {getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
+
+const db = firebase.firestore();
+
+const Register = () => {
+    const navigate = useNavigate();
+
+    const [username, setUsername] = React.useState("");
+    const [password, setPassword] = React.useState("");
+    const [email, setEmail] = React.useState("");
+
+// get data from database
+useEffect(() => {
+    db.collection("users").get().then (querySnapShot => {
+        querySnapShot.forEach (e => {
+            console.log (e.data())
+        })    
+    }) 
+}, [])
+    
+
+    const auth = getAuth(firebase);
+    const handleRegister = (event) => {
+        event.preventDefault();
+        if ((email > 0) || (password > 0) || (username > 0)) {
+        createUserWithEmailAndPassword (auth, email, password );
+        } else { alert (" do not leave blank..")}
+        db.collection("users").add ({
+            username, email, score : 0
+        })  
+    navigate("/login")
+
+    }
+
+// function Register () {
+//     const [email, setEmail] = useState ("");
+//     const [password, setPassword] = useState ("");
+//     const [user, setUser] = useState ("");
+
+//     onAuthStateChanged (auth, (currentUser) => {
+//         setUser(currentUser);
+//     });
+
+//     const Register = async () => {
+//         try {
+//           const user = await createUserWithEmailAndPassword(
+//             auth,
+//             email,
+//             password
+//           );
+//           console.log(user);
+//         } catch (error) {
+//           console.log(error.message);
+//         }
+//       };
+
+
+    return (
+        <div className ="container"> 
+            <h1>Sign Up</h1>
+            <form onSubmit={(v) => handleRegister(v)}>
+                <h3>Username</h3>
+                <input type="Username" placeholder="write your username here" onChange={(v)=> setUsername (v.target.value) }/>
+                <h3>Email</h3>
+                <input type="Email" placeholder="write your email here" onChange={(v)=> setEmail (v.target.value) }/>
+                <h3>Password</h3>
+                <input type="Password" placeholder="write your password here" onChange={(v)=> setPassword (v.target.value) }/>
+                <input type="submit" />
+                <h6 onClick={()=>window.location=("/Login")}>already have an account</h6>
+            </form>
+        </div>
+    )
+};
+
+export default Register;
+    
