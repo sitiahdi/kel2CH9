@@ -1,0 +1,26 @@
+
+
+
+/* CSS Line */
+
+
+.err-handle-page {
+    max-width: 100vw;
+    min-height: 100vh;
+
+    color: white;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background-image: url(../assets/err-handle-page-assets/requirements.png);
+}
+
+.err-handle-page h1 {
+    font-size: 8vw;
+}
+.err-handle-page p {
+    font-size: 2vw;
+}
