@@ -58,7 +58,7 @@ function GameListPage() {
         });
     }
 
-    function getCarouselData(data) {
+    function getSectionData(data) {
 
         const carouselArr = [];
         for (let i = 0; i < data.length; i++) {
@@ -96,7 +96,7 @@ function GameListPage() {
 
     useEffect(() => {
         if (data) {
-            getCarouselData(data)
+            getSectionData(data)
         }
     }, [data])
 
