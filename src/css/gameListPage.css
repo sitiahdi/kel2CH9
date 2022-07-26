@@ -46,14 +46,13 @@
 
     overflow-y: auto;
 
-    /* flex-wrap: wrap; */
 }
 
 .game-card-holder-all {
-
+    
     display: flex;
     align-items: center;
-
+    
     flex-wrap: wrap;
 }
 

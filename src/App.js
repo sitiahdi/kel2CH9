@@ -2,10 +2,11 @@ import React from "react";
 
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 
+import ErrHandlePage from "./views/ErrHandle";
 import GameListPage from "./views/GameListPage";
 import GameDetailsPage from "./views/GameDetailsPage";
 
-// Tambah route baru
+// Tambah route baru (tambahkan diatas ErrHandlePage)
 // <Route path="/" element={<Component Page nya />}/>
 
 function App() {
@@ -13,8 +14,13 @@ function App() {
     <div>
       <Router>
         <Routes>
+
           <Route path="/game-list" element={<GameListPage />}/>
           <Route path="/game-details/:id" element={<GameDetailsPage />}/>
+
+
+
+          <Route path="*" element={<ErrHandlePage />} />
         </Routes>
       </Router>
     </div>

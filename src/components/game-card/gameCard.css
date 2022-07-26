@@ -5,8 +5,8 @@
 
 
 .game-card {
-    max-width: 18%;
-    min-width: 18%;
+    max-width: 20%;
+    min-width: 20%;
 
     display: flex;
     justify-content: center;
