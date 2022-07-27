@@ -15,30 +15,30 @@ function Navigation() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className={`navbar-nav text center ms-xl-5 ps-lg-5 me-lg-auto ${style.link}`}>
               <li className="nav-item ms-lg-4">
-                <a className={`${style.link}`} href="#main">
+                <a className={`${style.link}`} href="/#main">
                   HOME
                 </a>
               </li>
               <li className="nav-item ms-lg-4">
-                <a className={`${style.link}`} href="#features">
+                <a className={`${style.link}`} href="/#features">
                   FEATURES
                 </a>
               </li>
               <li className="nav-item ms-lg-4">
-                <a className={`${style.link}`} href="#news">
+                <a className={`${style.link}`} href="/#news">
                   CONTACT
                 </a>
               </li>
               <li className="nav-item ms-lg-4">
-                <a className={`${style.link}`} href="#about">
+                <a className={`${style.link}`} href="/#about">
                   ABOUT
                 </a>
               </li>
             </ul>
             <ul className={`navbar-nav text center me-lg-5 pe-lg-5 ${style.link}`}>
               <li className="nav-item">
-                <a className={`${style.link}`} href="/signup">
-                  SIGN UP
+                <a className={`${style.link}`} href="/register">
+                  REGISTER
                 </a>
               </li>
               <li className="nav-item">

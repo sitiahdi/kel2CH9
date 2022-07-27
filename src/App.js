@@ -9,6 +9,7 @@ import Register from "./views/Register";
 import Login from "./views/login";
 import Profile from "./views/Profile";
 import Landing from "./views/Landing";
+import Navbar from "./components/Navbar/Navbar";
 
 // Tambah route baru (tambahkan diatas ErrHandlePage)
 // <Route path="/" element={<Component Page nya />}/>
@@ -17,6 +18,7 @@ function App() {
   return (
     <div>
       <Router>
+        <Navbar />
         <Routes>
           <Route path="/" exact element={<Landing />} />
           <Route path="/game-list" element={<GameListPage />} />
