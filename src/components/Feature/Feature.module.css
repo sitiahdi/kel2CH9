@@ -1,0 +1,46 @@
+.features {
+  padding: 10% 7%;
+  background: radial-gradient(51.1% 80.48% at 30.85% 53.65%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.2%, rgba(4, 5, 6, 0.520671) 47.48%, #080a0b 99.74%), url("../../assets/landing-assets/features.jpg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  width: 100%;
+  overflow: hidden;
+}
+.first {
+  position: relative;
+}
+.text {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+}
+@media (max-width: 1200px) {
+  .about {
+    padding: 15% 10%;
+  }
+}
+@media (max-width: 992px) {
+  .features {
+    padding: 15% 7%;
+  }
+  .title {
+    text-align: center;
+  }
+  .sub {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .features {
+    padding: 20% 7%;
+  }
+}
+@media (max-width: 576px) {
+  .features {
+    padding: 40% 5%;
+  }
+}
