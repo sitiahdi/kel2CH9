@@ -5,6 +5,7 @@ import {getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 
 const db = firebase.firestore();
+const auth = getAuth(firebase);
 
 const Register = () => {
     const navigate = useNavigate();
@@ -14,26 +15,29 @@ const Register = () => {
     const [email, setEmail] = React.useState("");
 
 // get data from database
-useEffect(() => {
-    db.collection("users").get().then (querySnapShot => {
-        querySnapShot.forEach (e => {
-            console.log (e.data())
-        })    
-    }) 
-}, [])
+// useEffect(() => {
+//     db.collection("users").get().then (querySnapShot => {
+//         querySnapShot.forEach (e => {
+//             console.log (e.data())
+//         })    
+//     }) 
+// }, [])
     
 
-    const auth = getAuth(firebase);
-    const handleRegister = (event) => {
+    const handleRegister = async (event) => {
         event.preventDefault();
-        if ((email > 0) || (password > 0) || (username > 0)) {
-        createUserWithEmailAndPassword (auth, email, password );
-        } else { alert (" do not leave blank..")}
-        db.collection("users").add ({
-            username, email, score : 0
-        })  
-    navigate("/login")
-
+        if (email.length === 0 || password.length === 0 || username.length === 0) {
+            alert (" do not leave blank..")
+        } else { 
+            const userData = await createUserWithEmailAndPassword (auth, email, password );
+            db.collection("users").add ({
+                username, 
+                email,
+                userUid: userData.user.uid,
+                score : 0
+            })  
+            navigate("/login")
+        }
     }
 
 // function Register () {

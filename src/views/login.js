@@ -12,13 +12,12 @@ const Login = () => {
     const auth = getAuth(firebase);
     const handleLogin = (event) => {
         event.preventDefault();
-        if ((email.length > 0) || (password.length > 0)) {
-            console.log (auth)
-            signInWithEmailAndPassword (auth, email, password). then (v => {
-                console.log(v)
-            })
-        } else {
+        if (email.length === 0 || password.length === 0) {
             alert ("do not leave form blank")
+        } else {
+            signInWithEmailAndPassword (auth, email, password). then (v => {
+                document.cookie = v.user.accessToken
+            });
         }
         
     };
