@@ -1,0 +1,87 @@
+.news {
+  padding: 5% 7%;
+  background: #080a0b;
+  background-image: radial-gradient(45.43% 53.19% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 46.15%, #080a0b 99.74%), url(../../assets/landing-assets/skull.png);
+  background-position-x: 25%;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+.btn {
+  border: 0;
+  background: linear-gradient(194.68deg, #ffb548 11.27%, #f3af34 90.4%);
+  width: 260px;
+  height: 56px;
+}
+.floating {
+  width: 25vw;
+}
+.control {
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 25px;
+}
+.control:focus {
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+}
+.label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+@media (max-width: 1200px) {
+  .btn {
+    width: 200px;
+  }
+}
+@media (max-width: 992px) {
+  .title {
+    text-align: center;
+  }
+  .text {
+    text-align: center;
+  }
+  .floating {
+    width: 50vw;
+  }
+  .btn {
+    width: 260px;
+  }
+}
+@media (max-width: 768px) {
+  .news {
+    padding: 10% 10%;
+  }
+  .btn {
+    width: 200px;
+  }
+}
+@media (max-width: 576px) {
+  .news {
+    padding: 15% 10% 10% 10%;
+  }
+  .btn {
+    height: auto;
+    width: auto;
+  }
+  .newsbtn {
+    display: flex;
+    justify-content: center;
+  }
+  .control {
+    font-size: 10px;
+    line-height: 20px;
+  }
+  .floating {
+    width: 80vw;
+  }
+}
