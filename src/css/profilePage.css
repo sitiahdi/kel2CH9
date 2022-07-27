@@ -1,0 +1,56 @@
+
+
+
+/* CSS Line */
+
+.profile-page {
+    width: 100vw;
+    height: 100vh;
+
+    background: url(../assets/profile-page-assets/features.jpg);
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 4rem;
+}
+
+.left-side {
+    width: 55%;
+    height: 100%;
+
+}
+
+.username {
+    font-size: 3rem;
+
+    margin-bottom: 5rem;
+}
+
+.right-side p {
+    color: lightgray;
+}
+
+.email-holder {
+    margin-bottom: 1rem;
+}
+
+
+
+.right-side {
+    width: 45%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
