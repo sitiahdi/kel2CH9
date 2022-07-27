@@ -7,6 +7,7 @@ import GameListPage from "./views/GameListPage";
 import GameDetailsPage from "./views/GameDetailsPage";
 import Register from './views/Register';
 import Login from './views/login';
+import Profile from "./views/Profile";
 
 // Tambah route baru (tambahkan diatas ErrHandlePage)
 // <Route path="/" element={<Component Page nya />}/>
@@ -21,6 +22,7 @@ function App() {
           <Route path="/game-details/:userId" element={<GameDetailsPage />}/>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
 
           <Route path="*" element={<ErrHandlePage />} />
         </Routes>
